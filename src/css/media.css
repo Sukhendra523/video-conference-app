@@ -1,0 +1,257 @@
+
+@media screen and (max-width:1440px)
+{
+	.meeting_rooms_table_slider .owl-nav {left:-40px; right:-40px;}
+	
+
+}
+
+
+@media screen and (max-width:1300px)
+{
+	.meeting_rooms_table_slider {max-width:1080px;}
+	.meeting_rooms_table_slider .owl-item.active.center .meeting_rooms_table_slide_box {min-width:690px;}
+	.meeting_rooms_table_slider .owl-item.active .meeting_rooms_table_slide_box {min-width:600px;}
+	.meeting_rooms_table_slider .owl-item.active.center + .owl-item.active{transform:translateX(-76%);}
+	.meeting_rooms_table_slider .owl-item.active.center{transform:translatex(-170px);}
+	
+
+}
+
+
+@media screen and (max-width:1200px)
+{
+	h1 {font-size:44px; line-height:64px;}
+	.content_box_inr:before {width:80vw; height:80vw;}
+	.content_box {padding:90px 0 0;}
+	.congratulations_box {width:90%;}
+	.meeting_call_otr {padding:0 50px 50px 50px;}
+	.meeting_call_box {height:calc(100vh - 115px);}
+	.user_video_deatil_box h2 {font-size: 30px; line-height: 40px;}
+	.meeting_user_video_box {top:30px; left:30px;}
+	.meeting_btm_button_box_icon {width:60px; height:60px; padding:18px;}
+	.meeting_end_button_box {margin:0 30px;}
+	.meeting_end_button_box svg {width:70px; height:70px;}
+	.member_video_box{flex:0 0 110px;}
+	.member_video_box a{left:6px;right:6px;top:6px;bottom:6px;font-size:14px;padding:0 2px;line-height:16px;}
+	.meeting_rooms_table_slide_box_title h3{font-size:24px;line-height:35px;padding-right:20px;}
+	.meeting_rooms_table_member_text h4{font-size:21px;line-height:34px;}
+	.meeting_rooms_table_member_icon {flex:0 0 68px; margin-right:14px;}
+	.meeting_rooms_table_slide_box_title {margin-bottom:3px;}
+	.meeting_rooms_table_member_list_item {padding:14px 0;}
+	.meeting_rooms_table_slider .owl-item.active.center .meeting_rooms_table_slide_box .meeting_rooms_table_member_list {height:360px;}
+	.meeting_rooms_table_slider .owl-item.active.center .meeting_rooms_table_slide_box {min-width:620px;}
+	.meeting_rooms_table_slider .owl-item .meeting_rooms_table_slide_box .meeting_rooms_table_member_list {height:280px;}
+	.meeting_rooms_table_slider .owl-item.active .meeting_rooms_table_slide_box {margin-left:0; min-width:520px;}
+	.meeting_rooms_table_slider .owl-nav {left:10px; right:10px;}
+	.meeting_rooms_table_slider .owl-nav button {width:60px; height:60px;}
+
+	.meeting_rooms_table_slider .owl-nav button:after {left:46%; bottom:13px;}
+	.meeting_rooms_table_slider .owl-nav button:before {top:15px; left:46%;}
+	.meeting_rooms_table_slider .owl-nav button.owl-next:after {bottom:9px; left: 50%;}
+	.meeting_rooms_table_slider .owl-nav button.owl-next:before {top:13px; left: 50%;}
+	.meeting_rooms_tables_btn {padding:0 0 50px;}
+	a.btn_gray{font-size:18px;line-height:28px;padding:10px 26px;}
+	a.a_btn{font-size:18px;line-height:28px;padding:10px 26px;}
+	.meeting_rooms_table_slider {max-width:1025px;}
+
+}
+
+
+@media screen and (max-width:1024px)
+{
+	.content_box_left {width:100%; text-align:center;}
+	.content_box {padding:60px 0;}
+	.content_box_right {width:80%; margin:0 auto 40px ;}
+	.content_box_inr:before{left:21%;top:-15%;}
+	.content_box_inr{flex-direction:column-reverse;}
+	.box_content {max-width:90%;}
+	.box_content:before {width:90vw; height:90vw;}
+	.user_video_deatil_box h2 {font-size:26px; line-height:30px;}
+	.user_video_box {flex:0 0 70px; border-radius:10px;}
+	.member_video_box {flex:0 0 90px; border-radius:10px;}
+	.member_video_box a {border-radius:6px;}
+	.meeting_rooms_topic h3 {font-size:25px; line-height:38px;}
+	.meeting_rooms_welcome strong {line-height:26px;}
+	.meeting_rooms_top_box {padding:55px 0 0px 0;}
+	.meeting_rooms_table_slider .owl-nav button {width:55px; height:55px;}
+	.meeting_rooms_table_slider .owl-nav button:before{top:15px;left:46%;height:19px;}
+	.meeting_rooms_table_slider .owl-nav button:after{left:45%;bottom:13px;height:19px;}
+	.meeting_rooms_table_slider .owl-nav button.owl-next:after{bottom:10px;}
+	.meeting_rooms_table_slider .owl-nav button.owl-next:before{top:12px;}
+	.meeting_rooms_table_slider .owl-item.active .meeting_rooms_table_slide_box{min-width:480px;}
+	.meeting_rooms_table_slider .owl-item.active.center .meeting_rooms_table_slide_box{min-width:550px;}
+	.meeting_rooms_table_member_text h4{font-size:19px;line-height:30px;}
+	.meeting_rooms_table_member_icon{flex:0 0 60px;margin-right:10px;}
+	.meeting_rooms_table_slider .owl-item.active.center + .owl-item.active{transform:translateX(-91%);}
+	.meeting_rooms_table_slider .owl-stage-outer {padding:50px 40px 40px !important;}
+	.meeting_rooms_table_slider .owl-item.active.center + .owl-item.active {transform:translateX(-86%);}
+	.meeting_rooms_tables_btn {padding:0 0 40px;}
+
+
+
+}
+
+@media screen and (max-width:900px)
+{
+	h1 {font-size:38px;}
+	.white_bg_box {padding:40px 6% 49px;}
+	.congratulations_agree_box p {padding-bottom:20px;}
+	.congratulations_contact_box {max-width:450px;}
+	h2 {font-size:28px; line-height:45px;}
+	.congratulations_contact_box_bg {padding:19px 30px 19px 30px;}
+	.congratulations_top_icon_box img {max-width:110px;}
+	.meeting_call_otr {padding:0 40px 40px 40px;}
+	.meeting_call_box {height:calc(100vh - 105px);}
+	.meeting_btm_button_box {bottom:20px; left:30px; right:30px;}
+	.meeting_call_box:before{width:100vw;height:100vw;left:15%;top:33%;}
+	.meeting_rooms_top_box {padding:50px 0 0px 0;}
+	.meeting_rooms_tables_btn {padding:0 0 40px;}
+	.meeting_rooms_table_slider .owl-item.active.center .meeting_rooms_table_slide_box{min-width:500px;}
+	.meeting_rooms_table_slider .owl-item.active .meeting_rooms_table_slide_box{min-width:400px;}
+	.meeting_rooms_table_slider .owl-item.active.center{transform:translatex(-150px);}
+}
+
+
+@media screen and (max-width:768px)
+{
+	.content_box_left {width:80%; margin:0 auto;}
+	.content_box_right{width:100%;}
+	h1{font-size:34px;}
+	h3{font-size:20px;}
+	.form_title{padding:0 0 6px 0;}
+	.content_box{padding:40px 0;}
+	.content_box_inr:before{left:-10%;top:-15%;width:100vw;height:100vw;}
+	.box_content {margin:40px auto 40px;}
+	.form_submit_box {margin:15px 0 0 0;}
+	.form_submit_box small {margin:15px 0 6px 0;}
+	.congratulations_contact_icon_box {max-width:100px;}
+	.congratulations_contact_box {max-width:400px;}
+	.congratulations_contact_text_box {width:62%;}
+	.congratulations_top_icon_box img {max-width:100px;}
+	.congratulations_box:before {width:100vw; height:100vw; left:28%;}
+	.meeting_call_add_user_btn_icon svg {width:30px; height:30px;}
+	.meeting_call_add_user_btn {padding:10px 0;}
+	.meeting_call_otr {padding:0 30px 30px 30px;}
+	.meeting_call_box {height:calc(100vh - 84px);}
+	.user_video_deatil_box p {font-size:15px;}
+	.user_video_deatil_box h2 {font-size:22px; line-height:19px;}
+	.meeting_user_video_box {top:20px; left:20px;}
+	.member_name_box p {font-size:16px;}
+	.member_video_box{flex:0 0 80px;border-radius:10px;margin-left:15px;}
+	.user_video_box{flex:0 0 60px;}
+	.meeting_member_box{top:20px;right:20px;}
+	.meeting_btm_button_box_icon{width:50px;height:50px;padding:15px;}
+	.meeting_end_button_box svg{width:60px;height:60px;}
+	.meeting_end_button_box{margin:0 20px;}
+	.member_video_box a {font-size:13px; line-height:14px;}
+	.meeting_rooms_topic h3 {font-size:24px; line-height:32px;}
+	.meeting_rooms_topic small {font-size:19px;}
+	.meeting_rooms_welcome strong {font-size:19px;}
+	.meeting_rooms_top_box {padding:40px 0 0px 0;}
+	.meeting_rooms_table_slider .owl-item.active.center {transform:translatex(0);}
+	.meeting_rooms_table_slider .owl-stage-outer {padding:0 !important;}
+	.meeting_rooms_table_slider .owl-item.active.center {padding: 50px 40px 30px;}
+	.meeting_rooms_table_slider .owl-item {opacity:1;}
+	.meeting_rooms_table_member_icon {flex:0 0 50px; margin-right:10px;}
+	.meeting_rooms_table_member_text h4 {font-size:18px; line-height:26px;}
+	.meeting_rooms_table_slide_box_title h3 {font-size:22px;}
+	.meeting_rooms_table_member_list_item {padding:12px 0;}
+	.meeting_rooms_tables_btn {padding:0 0 30px;}
+	.meeting_rooms_table_slider .owl-item .meeting_rooms_table_slide_box .meeting_rooms_table_member_list {height: 360px;}
+	.meeting_rooms_table_slider .owl-item.active.center .meeting_rooms_table_slide_box {min-width:unset;}
+
+}
+
+
+@media screen and (max-width:600px)
+{
+	header.header .wrapper {padding:0 20px;}
+	.logo_header {max-width:105px; padding:5px 0;}
+	h1{font-size:30px;line-height:40px;padding-bottom:10px;}
+	.content_box_inr:before{top:-6%;}
+	p,.form_submit_box small,.form_submit_box p a,.form_submit_box p strong{font-size:16px;line-height:24px;}
+	input[type="image"],input[type="submit"],input[type="button"],button{padding:0px 16px;height:50px;font-size:17px;line-height:50px; min-width:120px;}
+	span.form_submit_icon_box svg{width:15px;height:18px;}
+	.wrapper {padding: 0 20px;}
+	.content_box_left {width:90%;}
+	.content_box {min-height: calc(100vh - 63px);}
+	textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {padding:0 20px; height:48px;}
+    input, select, textarea, button {font-size:16px;}
+    .form_input_box {padding:0 0 15px 0;}    
+    h2 {font-size:25px; line-height:40px;}
+    .congratulations_contact_detail_box a {font-size:16px; line-height:27px; margin:6px 0 0 0;}
+	.congratulations_contact_detail_box_icon{width:17px;margin-right:10px;}
+	.meeting_member_box .member_box {flex-direction:column;}
+	.user_video_deatil_box h2 {font-size:20px;}
+	.user_video_box {margin-right:10px;}
+	.meeting_member_box {top:10px; right:10px;}
+	.member_name_box p {font-size:15px;}
+	.meeting_user_video_box {top:10px; left:10px;}
+	.meeting_call_add_user_btn a {font-size:16px;}
+	.meeting_call_add_user_btn_icon svg {width:26px; height:26px;}
+	.meeting_btm_button_box_icon {width:45px; height:45px; padding:12px;}
+	.meeting_btm_button_box {bottom:10px; left:20px; right:20px;}
+	.meeting_call_box:before {top:50%;}
+	.member_video_box {margin-left: 0;}
+	.member_video_box a {font-size: 11px; line-height: 12px; left: 0; right: 0; top: 0; bottom: 0; border-radius: 2px;}
+	.meeting_rooms_topic h3 {font-size:22px; line-height:30px;}
+	.meeting_rooms_welcome strong {line-height:24px;}
+	a.a_btn{font-size:17px;line-height:24px;padding:10px 20px;}
+	a.btn_gray{font-size:17px;line-height:24px;padding:10px 20px;}
+}
+
+
+
+@media screen and (max-width:480px) 
+{
+	h1{font-size:26px;line-height:30px;padding-bottom:5px;}
+	.form_box{padding:15px 0 0 0;}
+	h3{font-size:18px;line-height:26px;}
+	.content_box{padding:30px 0;}
+	.form_submit_box small {font-size: 15px;}
+	.white_bg_box {padding:30px 9% 30px;}
+	textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"]{padding:0 15px;height:42px;border-radius:5px;}
+	.congratulations_top_icon_box img{max-width:80px;}
+	h2{font-size:22px;line-height:34px;}
+	.congratulations_contact_icon_box{max-width:90px;margin:0 auto 20px;}
+	.congratulations_contact_text_box{width:100%;}
+	.congratulations_contact_box > a{font-size:15px;line-height:20px;display:flex;align-items:flex-start;justify-content:flex-start;text-align:left;}
+	.congratulations_contact_detail_box_icon{display:inline-block;}
+	.congratulations_contact_detail_box_icon svg{width:100%;}
+	span.edit_icon_svg svg {width:20px; height:20px;}
+	.meeting_end_button_box {margin:0 10px;}
+	.meeting_call_otr{padding:0 20px 20px 20px;}
+	.meeting_call_box{height:calc(100vh - 74px);}
+	.meeting_end_button_box svg{width:50px;height:50px;}
+	.meeting_btm_button_box_icon{width:38px;height:38px;padding:10px;}
+	.member_name_box p,.user_video_deatil_box p{font-size:13px;}
+	.user_video_deatil_box h2{font-size:18px;line-height:20px;}
+	.member_video_box{flex:0 0 60px;border-radius:4px;border:2px solid #FFFFFF;margin-right: 10px;}
+	.meeting_member_box{position:absolute;top:80px;left:11px;width:60px;}
+	.user_video_box{flex:0 0 50px;border-radius:5px;border:2px solid #FFFFFF;}
+	.meeting_member_box .member_box {flex-direction: row;}
+	.meeting_btm_button_box {bottom:10px; left:10px; right:10px;}
+	.meeting_rooms_topic h3 {font-size:20px; line-height:25px;}
+	.meeting_rooms_topic small {font-size:17px; line-height:25px;}
+	.meeting_rooms_welcome strong {font-size:18px; line-height:20px;}
+	.meeting_rooms_table_slider .owl-item.active.center {padding:50px 20px 30px;}
+	.meeting_rooms_table_slide_box {padding:20px 10px 0 20px;}
+	.meeting_rooms_table_member_list_item {margin-right:10px;}
+	.meeting_rooms_table_slide_box_title h3 {font-size:20px; padding-right:15px;}
+	.meeting_rooms_table_member_icon {flex:0 0 40px;}
+	.meeting_rooms_table_slider .owl-nav button {width:40px; height:40px;}
+	.meeting_rooms_table_slider .owl-nav button:before{left:45%; top:11px; height:14px; width:3px;}
+	.meeting_rooms_table_slider .owl-nav button:after{left:45%; bottom:9px; height:14px; width:3px;}
+	.meeting_rooms_table_slider .owl-nav button.owl-next:before{top:9px;}
+	.meeting_rooms_table_slider .owl-nav button.owl-next:after{bottom:6px;}
+	a.a_btn{font-size:16px;line-height:24px;padding:8px 15px;border-radius:5px;}
+	a.btn_gray{font-size:16px;line-height:24px;padding:8px 15px;border-radius:5px;}
+	.meeting_rooms_tables_btn a{margin:0 3px;}
+	.meeting_rooms_table_member_list::-webkit-scrollbar{width:5px;}
+	.meeting_rooms_inr:before {top:0;}
+	.meeting_rooms_table_member_text p {font-size:14px; line-height:20px;}
+	.meeting_rooms_table_member_list::-webkit-scrollbar-track{border-radius:8px;}
+	.meeting_rooms_table_member_list::-webkit-scrollbar-thumb{border-radius:8px;}
+}
+
