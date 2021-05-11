@@ -149,10 +149,11 @@ select {
   border-radius: 3px;
   padding: 15px 13px;
 }
-input[type="image"],
+
+.form__box input[type="image"],
 input[type="submit"],
 input[type="button"],
-button {
+div button {
   background: #da392a;
   border: medium none;
   border-radius: 8px;
@@ -172,6 +173,7 @@ button {
   border: 2px solid #da392a;
   min-width: 159px;
 }
+
 input[type="image"]:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
