@@ -10,8 +10,13 @@ import MicNoneIcon from "@material-ui/icons/MicNone";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import AppsIcon from "@material-ui/icons/Apps";
 import AppsOutlinedIcon from "@material-ui/icons/AppsOutlined";
-import DesktopAccessDisabledIcon from "@material-ui/icons/DesktopAccessDisabled";
-import DesktopWindowsIcon from "@material-ui/icons/DesktopWindows";
+import StopScreenShareIcon from "@material-ui/icons/StopScreenShare";
+import ScreenShareIcon from "@material-ui/icons/ScreenShare";
+import SecurityIcon from "@material-ui/icons/Security";
+import AlbumIcon from "@material-ui/icons/Album";
+import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
+import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
+import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 
 import "./Meet.css";
 
@@ -28,12 +33,15 @@ const Meet = ({
   const [video, setVideo] = useState(false);
   const [tile, setTile] = useState(false);
   const [screenShare, setScreenShare] = useState(false);
+  const [recording, setRecording] = useState(false);
 
   const { loading, error, jitsi } = useJitsi({
     setAudio,
     setVideo,
     setTile,
     setScreenShare,
+    setRecording,
+    recording,
     parentNode: "jitsi-container",
     ...options,
   });
@@ -61,24 +69,53 @@ const Meet = ({
           ...jitsiContainerStyles,
         }}
       />
+      <div id="participants_info" style={{ display: "none" }}>
+        {/* {console.log("API.getParticipantsInfo() : ", API.getParticipantsInfo())} */}
+      </div>
       <div id="toolbox" className="toolbox" style={{ display: "none" }}>
-        <button id="btnCustomTileView">
-          {tile ? <AppsIcon /> : <AppsOutlinedIcon />}
-        </button>
-        <div className="toolbox__center">
-          <button id="btnCustomMic">
-            {audio ? <MicNoneIcon /> : <MicOffIcon />}
-          </button>
-          <button id="btnHangup">
-            <CallEndIcon />
-          </button>
+        <div className="toolbox__left">
           <button id="btnCustomCamera">
             {video ? <VideocamIcon /> : <VideocamOffIcon />}
           </button>
+          <button id="btnCustomMic">
+            {audio ? <MicNoneIcon /> : <MicOffIcon />}
+          </button>
         </div>
-        <button id="btnScreenShareCustom">
-          {screenShare ? <DesktopWindowsIcon /> : <DesktopAccessDisabledIcon />}
-        </button>
+        <div className="toolbox__center">
+          <button id="btnSecurity">
+            <SecurityIcon />
+          </button>
+          <button id="btnParticipants">
+            <PeopleAltIcon />
+          </button>
+          <button id="btnChatbox">
+            <ChatBubbleIcon />
+          </button>
+          <button id="btnCustomTileView" style={{ color: "green" }}>
+            {tile ? <AppsIcon /> : <AppsOutlinedIcon />}
+          </button>
+          <button id="btnScreenShareCustom">
+            {screenShare ? <StopScreenShareIcon /> : <ScreenShareIcon />}
+          </button>
+          {recording ? (
+            <button id="btnStopRecording">
+              <AlbumIcon style={{ color: "red" }} />
+            </button>
+          ) : (
+            <button id="btnStartRecording">
+              <AlbumIcon />
+            </button>
+          )}
+
+          <button id="btnReaction">
+            <EmojiEmotionsIcon />
+          </button>
+        </div>
+        <div className="toolbox__right">
+          <button id="btnHangup">
+            <CallEndIcon />
+          </button>
+        </div>
       </div>
     </div>
   );

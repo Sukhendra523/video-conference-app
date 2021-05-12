@@ -21,11 +21,11 @@ const App = () => {
           roomName={room}
           displayName={name}
           password={password}
-          loadingComponent={LoadingComponent}
+          loadingComponent={<p>Loading......</p>}
           errorComponent={<p>Oops, something went wrong</p>}
           containerStyles={{
             width: "100%",
-            height: "calc(100vh)",
+            height: "calc(100vh - 59px)",
           }}
         />
       ) : (

@@ -2,9 +2,6 @@ import { React, useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 
 import $ from "jquery";
-import Header from "./componets/Header";
-import ContentBox from "./componets/ContentBox";
-import callContext from "./App";
 
 const useJitsi = ({
   domain = "meet.jit.si",
@@ -12,6 +9,8 @@ const useJitsi = ({
   setVideo,
   setTile,
   setScreenShare,
+  setRecording,
+  recording,
   parentNode,
   subject,
   password,
@@ -21,7 +20,7 @@ const useJitsi = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [jitsi, setJitsi] = useState(null);
-
+  // var partInfo = false;
   var API = null;
 
   useEffect(() => {
@@ -42,7 +41,49 @@ const useJitsi = ({
       $("#btnScreenShareCustom").on("click", function () {
         API.executeCommand("toggleShareScreen");
       });
+      $("#btnChatbox").on("click", function () {
+        API.executeCommand("toggleChat");
+      });
+      //   $("#btnStartRecording").on("click", function () {
+      //     API.executeCommand("startRecording", {
+      //       mode: "file",
+      //       // dropboxToken:
+      //       //   "sl.AwqgiwyuVOck9Z5RCaVYbaewUt9pUUt4oAN7GaBUO9R05zCC8gj7XjPjPg0sKrBNMULR0YxxELiyQvs8NBGs-TEYOYMPFZ9MXLsvaFKkB5KI3Sd6AR5D4vfgCUIQQt2IlD4uII0",
+      //     });
+      //   });
+      //   $("#btnStopRecording").on("click", function () {
+      //     API.executeCommand("stopRecording", { mode: "file" });
+      //   });
+      //   $("#btnParticipants").on("click", function () {
+      //     const ParticipantsInfo = API.getParticipantsInfo();
+      //     const NumberOfParticipants = API.getNumberOfParticipants();
+      //     partInfo = !partInfo;
+      //     API.executeCommand(
+      //       "avatarUrl",
+      //       "https://www.iconninja.com/files/477/18/506/male-person-user-casual-avatar-man-icon.svg"
+      //     );
+      //     if (partInfo) {
+      //       $("#participants_info").toggleClass("participants_info");
+      //       $("#participants_info").append(
+      //         `<h3>Meeting Participants ( ${NumberOfParticipants}) </h3>`,
+      //         "<ul id='participants_info_list'></ul>"
+      //       );
+
+      //       ParticipantsInfo.map(({ avatarURL, displayName }) => {
+      //         $("#participants_info_list").append(
+      //           `<li><img src=${
+      //             avatarURL || "images/avatar.svg"
+      //           } style='border-radius:50%; width:30px;'>${displayName}</li>`
+      //         );
+      //       });
+      //     } else {
+      //       $("#participants_info").html("");
+      //     }
+      //     console.log("ParticipantsInfo :", ParticipantsInfo);
+      //     console.log("number :", API.getNumberOfParticipants());
+      //   });
     }
+
     BindEvent();
 
     if (!window.JitsiMeetExternalAPI) {
@@ -78,6 +119,7 @@ const useJitsi = ({
         DEFAULT_WELCOME_PAGE_LOGO_URL: "images/oneClick_logo.png",
       },
       configOverwrite: {
+        gravatarBaseURL: "https://seccdn.libravatar.org/avatar/",
         disableSimulcast: false,
         startVideoMuted: 0,
         startWithVideoMuted: true,
@@ -88,6 +130,24 @@ const useJitsi = ({
         remoteVideoMenu: {
           disableKick: true,
         },
+        // Recording
+
+        // Whether to enable file recording or not.
+        // fileRecordingsEnabled: true,
+        // Enable the dropbox integration.
+        // dropbox: {
+        //   appKey: "xveur4t5kkc7e30", // Specify your app key here.
+        //   // A URL to redirect the user to, after authenticating
+        //   // by default uses:
+        //   // 'https://jitsi-meet.example.com/static/oauth.html'
+        //   redirectURI: "https://jitsi-meet.example.com/static/oauth.html",
+        // },
+        // When integrations like dropbox are enabled only that will be shown,
+        // by enabling fileRecordingsServiceEnabled, we show both the integrations
+        // and the generic recording service (its configuration and storage type
+        // depends on jibri configuration)
+        // fileRecordingsServiceEnabled: true,
+        // Whether to show the possibility to share file recording with other people
         TOOLBAR_ALWAYS_VISIBLE: false,
         TOOLBAR_TIMEOUT: 4000,
         toolbarButtons: [
@@ -124,8 +184,9 @@ const useJitsi = ({
       },
       readyToClose: function () {
         console.log("Meeting has ended");
-        $("#jitsi-container").empty();
-        $("#toolbox").hide();
+
+        // $("#jitsi-container").empty();
+        // $("#toolbox").hide();
       },
       audioMuteStatusChanged: function (data) {
         if (data.muted) setAudio(false);
@@ -148,6 +209,10 @@ const useJitsi = ({
       },
       participantLeft: function (data) {
         console.log("participantLeft", data);
+      },
+      recordingStatusChanged: function (data) {
+        if (data.on) setRecording(true);
+        else setRecording(false);
       },
     });
     // API.addEventListener("videoConferenceJoined", () => {
