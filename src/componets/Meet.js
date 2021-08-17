@@ -19,6 +19,7 @@ import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 
 import "./Meet.css";
+import { Redirect } from "react-router-dom";
 
 const Meet = ({
   loadingComponent,
@@ -34,8 +35,9 @@ const Meet = ({
   const [tile, setTile] = useState(false);
   const [screenShare, setScreenShare] = useState(false);
   const [recording, setRecording] = useState(false);
-
+  const [hangUpCall, setHangUpCall] = useState(false)
   const { loading, error, jitsi } = useJitsi({
+    setHangUpCall,
     setAudio,
     setVideo,
     setTile,
@@ -53,7 +55,9 @@ const Meet = ({
   useEffect(() => {
     if (error && onError) onError(error);
   }, [error]);
-
+  if (hangUpCall){
+    <Redirect to="/" />
+  }
   return (
     <div style={{ ...{ width: "800px", height: "400px" }, ...containerStyles }}>
       {error && (errorComponent || <p>{error}</p>)}
@@ -69,10 +73,10 @@ const Meet = ({
           ...jitsiContainerStyles,
         }}
       />
-      <div id="participants_info" style={{ display: "none" }}>
-        {/* {console.log("API.getParticipantsInfo() : ", API.getParticipantsInfo())} */}
-      </div>
-      <div id="toolbox" className="toolbox" style={{ display: "none" }}>
+      {/* <div id="participants_info" style={{ display: "none" }}>
+       {console.log("API.getParticipantsInfo() : ", API.getParticipantsInfo())} *
+      </div> */}
+      {/* <div id="toolbox" className="toolbox" style={{ display: "none" }}>
         <div className="toolbox__left">
           <button id="btnCustomCamera">
             {video ? <VideocamIcon /> : <VideocamOffIcon />}
@@ -111,12 +115,13 @@ const Meet = ({
             <EmojiEmotionsIcon />
           </button>
         </div>
-        <div className="toolbox__right">
+        
+      </div> */}
+      <div className="toolbox__right" >
           <button id="btnHangup">
             <CallEndIcon />
           </button>
         </div>
-      </div>
     </div>
   );
 };

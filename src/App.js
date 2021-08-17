@@ -25,7 +25,7 @@ const App = () => {
           errorComponent={<p>Oops, something went wrong</p>}
           containerStyles={{
             width: "100%",
-            height: "calc(100vh - 59px)",
+            height: "100vh",
           }}
         />
       ) : (

@@ -1,10 +1,11 @@
-import { React, useState, useEffect, useContext } from "react";
+import { React, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import $ from "jquery";
 
 const useJitsi = ({
   domain = "meet.jit.si",
+  setHangUpCall,
   setAudio,
   setVideo,
   setTile,
@@ -27,61 +28,62 @@ const useJitsi = ({
     function BindEvent() {
       $("#btnHangup").on("click", function () {
         API.executeCommand("hangup");
-        window.location.reload(true);
+        setHangUpCall(true)
+        window.location.reload(true)
       });
-      $("#btnCustomMic").on("click", function () {
-        API.executeCommand("toggleAudio");
-      });
-      $("#btnCustomCamera").on("click", function () {
-        API.executeCommand("toggleVideo");
-      });
-      $("#btnCustomTileView").on("click", function () {
-        API.executeCommand("toggleTileView");
-      });
-      $("#btnScreenShareCustom").on("click", function () {
-        API.executeCommand("toggleShareScreen");
-      });
-      $("#btnChatbox").on("click", function () {
-        API.executeCommand("toggleChat");
-      });
-      //   $("#btnStartRecording").on("click", function () {
-      //     API.executeCommand("startRecording", {
-      //       mode: "file",
-      //       // dropboxToken:
-      //       //   "sl.AwqgiwyuVOck9Z5RCaVYbaewUt9pUUt4oAN7GaBUO9R05zCC8gj7XjPjPg0sKrBNMULR0YxxELiyQvs8NBGs-TEYOYMPFZ9MXLsvaFKkB5KI3Sd6AR5D4vfgCUIQQt2IlD4uII0",
-      //     });
-      //   });
-      //   $("#btnStopRecording").on("click", function () {
-      //     API.executeCommand("stopRecording", { mode: "file" });
-      //   });
-      //   $("#btnParticipants").on("click", function () {
-      //     const ParticipantsInfo = API.getParticipantsInfo();
-      //     const NumberOfParticipants = API.getNumberOfParticipants();
-      //     partInfo = !partInfo;
-      //     API.executeCommand(
-      //       "avatarUrl",
-      //       "https://www.iconninja.com/files/477/18/506/male-person-user-casual-avatar-man-icon.svg"
-      //     );
-      //     if (partInfo) {
-      //       $("#participants_info").toggleClass("participants_info");
-      //       $("#participants_info").append(
-      //         `<h3>Meeting Participants ( ${NumberOfParticipants}) </h3>`,
-      //         "<ul id='participants_info_list'></ul>"
-      //       );
+    //   $("#btnCustomMic").on("click", function () {
+    //     API.executeCommand("toggleAudio");
+    //   });
+    //   $("#btnCustomCamera").on("click", function () {
+    //     API.executeCommand("toggleVideo");
+    //   });
+    //   $("#btnCustomTileView").on("click", function () {
+    //     API.executeCommand("toggleTileView");
+    //   });
+    //   $("#btnScreenShareCustom").on("click", function () {
+    //     API.executeCommand("toggleShareScreen");
+    //   });
+    //   $("#btnChatbox").on("click", function () {
+    //     API.executeCommand("toggleChat");
+    //   });
+    //     $("#btnStartRecording").on("click", function () {
+    //       API.executeCommand("startRecording", {
+    //         mode: "file",
+    //         // dropboxToken:
+    //         //   "sl.AwqgiwyuVOck9Z5RCaVYbaewUt9pUUt4oAN7GaBUO9R05zCC8gj7XjPjPg0sKrBNMULR0YxxELiyQvs8NBGs-TEYOYMPFZ9MXLsvaFKkB5KI3Sd6AR5D4vfgCUIQQt2IlD4uII0",
+    //       });
+    //     });
+    //     $("#btnStopRecording").on("click", function () {
+    //       API.executeCommand("stopRecording", { mode: "file" });
+    //     });
+    //     $("#btnParticipants").on("click", function () {
+    //       const ParticipantsInfo = API.getParticipantsInfo();
+    //       const NumberOfParticipants = API.getNumberOfParticipants();
+    //       partInfo = !partInfo;
+    //       API.executeCommand(
+    //         "avatarUrl",
+    //         "https://www.iconninja.com/files/477/18/506/male-person-user-casual-avatar-man-icon.svg"
+    //       );
+    //       if (partInfo) {
+    //         $("#participants_info").toggleClass("participants_info");
+    //         $("#participants_info").append(
+    //           `<h3>Meeting Participants ( ${NumberOfParticipants}) </h3>`,
+    //           "<ul id='participants_info_list'></ul>"
+    //         );
 
-      //       ParticipantsInfo.map(({ avatarURL, displayName }) => {
-      //         $("#participants_info_list").append(
-      //           `<li><img src=${
-      //             avatarURL || "images/avatar.svg"
-      //           } style='border-radius:50%; width:30px;'>${displayName}</li>`
-      //         );
-      //       });
-      //     } else {
-      //       $("#participants_info").html("");
-      //     }
-      //     console.log("ParticipantsInfo :", ParticipantsInfo);
-      //     console.log("number :", API.getNumberOfParticipants());
-      //   });
+    //         ParticipantsInfo.map(({ avatarURL, displayName }) => {
+    //           $("#participants_info_list").append(
+    //             `<li><img src=${
+    //               avatarURL || "images/avatar.svg"
+    //             } style='border-radius:50%; width:30px;'>${displayName}</li>`
+    //           );
+    //         });
+    //       } else {
+    //         $("#participants_info").html("");
+    //       }
+    //       console.log("ParticipantsInfo :", ParticipantsInfo);
+    //       console.log("number :", API.getNumberOfParticipants());
+    //     });
     }
 
     BindEvent();
@@ -124,11 +126,11 @@ const useJitsi = ({
         startVideoMuted: 0,
         startWithVideoMuted: true,
         startWithAudioMuted: true,
-        enableWelcomePage: false,
-        prejoinPageEnabled: false,
-        disableRemoteMute: true,
+        enableWelcomePage: true,
+        prejoinPageEnabled: true,
+        disableRemoteMute: false,
         remoteVideoMenu: {
-          disableKick: true,
+          disableKick:false,
         },
         // Recording
 
@@ -151,14 +153,36 @@ const useJitsi = ({
         TOOLBAR_ALWAYS_VISIBLE: false,
         TOOLBAR_TIMEOUT: 4000,
         toolbarButtons: [
-          /* "microphone",
+          "closedcaptions",
+          "fullscreen",
+          "recording",
+          "shareaudio",
+          "settings",
+          "select-background",
+          "download",
+          "help",
+          "mute-everyone",
+          "mute-video-everyone",
+          "security",
+          "videoquality",
+          "filmstrip",
+          "invite",
+          "feedback",
+          "stats",
+          "shortcuts",
+          "microphone",
           "camera",
-          "hangup", 
-          "tileview" ,'closedcaptions', 'desktop', 'embedmeeting', 'fullscreen',
-     'fodeviceselection',  'profile', 'chat', 'recording',
-     'livestreaming', 'etherpad', 'sharedvideo', 'shareaudio', 'settings', 'raisehand',
-     'videoquality', 'filmstrip', 'invite', 'feedback', 'stats', 'shortcuts',
-     'select-background', 'download', 'help', 'mute-everyone', 'mute-video-everyone', 'security' */
+          // "hangup",
+          "tileview",
+          "desktop",
+          "embedmeeting",
+          "fodeviceselection",
+          "profile",
+          "chat",
+          "livestreaming",
+          "etherpad",
+          "sharedvideo",
+          "raisehand",
         ],
       },
     };
@@ -184,36 +208,36 @@ const useJitsi = ({
       },
       readyToClose: function () {
         console.log("Meeting has ended");
-
+        // window.location.reload(true);
         // $("#jitsi-container").empty();
         // $("#toolbox").hide();
       },
-      audioMuteStatusChanged: function (data) {
-        if (data.muted) setAudio(false);
-        else setAudio(true);
-      },
-      videoMuteStatusChanged: function (data) {
-        if (data.muted) setVideo(false);
-        else setVideo(true);
-      },
-      tileViewChanged: function (data) {
-        if (data.on) setTile(true);
-        else setTile(false);
-      },
-      screenSharingStatusChanged: function (data) {
-        if (data.on) setScreenShare(true);
-        else setScreenShare(false);
-      },
-      participantJoined: function (data) {
-        console.log("participantJoined", data);
-      },
-      participantLeft: function (data) {
-        console.log("participantLeft", data);
-      },
-      recordingStatusChanged: function (data) {
-        if (data.on) setRecording(true);
-        else setRecording(false);
-      },
+      // audioMuteStatusChanged: function (data) {
+      //   if (data.muted) setAudio(false);
+      //   else setAudio(true);
+      // },
+      // videoMuteStatusChanged: function (data) {
+      //   if (data.muted) setVideo(false);
+      //   else setVideo(true);
+      // },
+      // tileViewChanged: function (data) {
+      //   if (data.on) setTile(true);
+      //   else setTile(false);
+      // },
+      // screenSharingStatusChanged: function (data) {
+      //   if (data.on) setScreenShare(true);
+      //   else setScreenShare(false);
+      // },
+      // participantJoined: function (data) {
+      //   console.log("participantJoined", data);
+      // },
+      // participantLeft: function (data) {
+      //   console.log("participantLeft", data);
+      // },
+      // recordingStatusChanged: function (data) {
+      //   if (data.on) setRecording(true);
+      //   else setRecording(false);
+      // },
     });
     // API.addEventListener("videoConferenceJoined", () => {
     //   password && API.executeCommand("password", password);

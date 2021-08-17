@@ -14,8 +14,13 @@
   align-items: center;
   justify-content: space-between;
 }
+.toolbox__right{
+  position:absolute;
+  bottom: 30px;
+  right: 0;
+}
 
-.toolbox button {
+.toolbox__right button {
   background: transparent;
   border: medium none;
   cursor: pointer;
@@ -31,14 +36,14 @@
   min-width: 90px;
   padding: 10px;
 }
-.toolbox button svg {
-  font-size: 1.5rem;
-  width: 44px;
-  height: 44px;
+.toolbox__right button svg {
+  font-size: 2.5rem;
+  width: 107px;
+  height: 50px;
 }
-.toolbox button:hover {
+/* .toolbox__right button:hover {
   background-color: rgb(128, 120, 106);
-}
+} */
 
 #btnHangup {
   color: red;
